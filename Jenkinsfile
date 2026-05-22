@@ -47,10 +47,10 @@ pipeline {
                         
                         # Conectarse por SSH, cargar la imagen, detener el contenedor anterior y ejecutar el nuevo
                         sshpass -e ssh -o StrictHostKeyChecking=no ${SSH_USERNAME}@${SSH_HOST} "
-                            echo \\\$SSHPASS | sudo -S docker load -i /tmp/${IMAGE_NAME}.tar &&
-                            echo \\\$SSHPASS | sudo -S docker stop mi-app-contenedor || true &&
-                            echo \\\$SSHPASS | sudo -S docker rm mi-app-contenedor || true &&
-                            echo \\\$SSHPASS | sudo -S docker run -d --name mi-app-contenedor -p 9091:9091 ${IMAGE_NAME}:${env.BUILD_ID}
+                            echo \\"\$SSHPASS\\" | sudo -S docker load -i /tmp/${IMAGE_NAME}.tar &&
+                            echo \\"\$SSHPASS\\" | sudo -S docker stop mi-app-contenedor || true &&
+                            echo \\"\$SSHPASS\\" | sudo -S docker rm mi-app-contenedor || true &&
+                            echo \\"\$SSHPASS\\" | sudo -S docker run -d --name mi-app-contenedor -p 9091:9091 ${IMAGE_NAME}:${env.BUILD_ID}
                         "
                         """
                     }
