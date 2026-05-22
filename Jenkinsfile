@@ -13,7 +13,7 @@ pipeline {
         // ID de la credencial: 'preproduccion-ssh-cred'
         // Username: iscenidet
         // Password: ISDcc*2023+cenidet
-        SSH_CREDENTIAL_ID = 'ssh-preproduccion'
+        SSH_CREDENTIAL_ID = 'preproduccion-ssh-cred'
     }
 
     stages {
